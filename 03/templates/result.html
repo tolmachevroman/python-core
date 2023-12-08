@@ -1,0 +1,26 @@
+<!-- FILEPATH: /Users/romantolmachev/Github/python-core/03/templates/result.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+    <p>The shortened URL is: <a href="{{ original_url }}">{{ shortened_url }}</a></p>
+</body>
+
+<body>
+    <h1>Top 100 URLs</h1>
+    <ul>
+        {% for url in urls %}
+        {% set id, shortened_url, original_url, counter = url %}
+        <li>
+            <p>The shortened URL is: <a href="{{ original_url }}">{{ shortened_url }}</a></p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
